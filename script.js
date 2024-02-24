@@ -21,6 +21,7 @@ window.onload = async function() {
             <h3>${item.title}</h3>
             <a class="card-link" target="_blank" href="${item.url}" download="${item.title}.pdf">Get now</a>
             <button class="edit-btn" id="${item.id}">Edit</button>
+            <button class="delete-btn" id="${item.id}">Delete</button>
             </div>
             </div>`;
 
@@ -30,21 +31,53 @@ window.onload = async function() {
         let editBtn = document.getElementsByClassName("edit-btn");
         for (let j = 0; j < editBtn.length; j++) {
             editBtn[j].onclick = async function() {
-                let data = JSON.stringify({
-                    id: 1,
-                    title: 'foo',
-                    body: 'bar',
-                    userId: 1,
-                });
-                let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`, {
-                    method: 'PUT',
-                    body: data,
-                    headers: {
-                        'Content-type': 'applicaiton/json; charset=UTF-8'
-                    }
-                })
-                let updatedData = response.json();
-                console.log(updatedData);
+
+                try {
+                    let data = JSON.stringify({
+                        id: 1,
+                        title: 'foo',
+                        body: 'bar',
+                        userId: 1,
+                    });
+                    let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`, {
+                        method: 'PUT',
+                        body: data,
+                        headers: {
+                            'Content-type': 'applicaiton/json; charset=UTF-8'
+                        }
+                    })
+                    let updatedData = response.json();
+                    console.log(updatedData);
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+
+        }
+        //Delete
+
+        let deleteBtn = document.getElementsByClassName('delete-btn');
+        for (let k = 0; k < deleteBtn.length; k++) {
+            deleteBtn[k].onclick = async function() {
+                try {
+                    let data = JSON.stringify({
+                        id: 1,
+                        title: 'foo',
+                        body: 'bar',
+                        userId: 1,
+                    });
+                    let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`, {
+                        method: 'DELETE',
+                        body: data,
+                        headers: {
+                            'Content-type': 'applicaiton/json; charset=UTF-8'
+                        }
+                    })
+                    let updatedData = response.json();
+
+                } catch (err) {
+                    console.log(err);
+                }
             }
         }
     } catch (err) { console.log(err); } finally {

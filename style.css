@@ -73,6 +73,14 @@ body {
     padding: 7px 22px;
 }
 
+.delete-btn {
+    text-decoration: none;
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    padding: 7px 22px;
+}
+
 form {
     display: flex;
     flex-direction: column;
