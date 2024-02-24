@@ -10,3 +10,7 @@ When there is tones of data coming through API, it makes site slow, at that time
 2. Using back end, add paging
 
 - ?_limit=20 this at the end of the url will limit the data up to 20, it depends on URL, 
+
+- try() catch() finally()
+- GET POST
+- PUT DELETE
