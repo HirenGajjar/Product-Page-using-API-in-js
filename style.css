@@ -7,6 +7,8 @@
 
 body {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #loader {
@@ -16,4 +18,40 @@ body {
     transform: translate(-50%, -50%);
     font-size: 3em;
     display: none;
+}
+
+#container {
+    width: 75%;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px;
+    overflow: hidden;
+    gap: 50px;
+}
+
+#title {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #ddd;
+    display: flex;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+}
+
+.card-link {
+    text-decoration: none;
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    padding: 15px 45px;
 }
